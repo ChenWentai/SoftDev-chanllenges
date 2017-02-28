@@ -1,0 +1,9 @@
+objects = $(wildcard thumbs/*.jpg)
+all: $(objects)
+
+	cd pictures;\
+	for i in *.jpg;\
+	do convert "$$i" -thumbnail 100 "../thumbs/$$i";\
+	done
+
+$(objects): pictures/*.jpg
